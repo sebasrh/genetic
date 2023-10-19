@@ -48,7 +48,6 @@ INSTALLED_APPS = [
     'apps.accounts',
     'apps.home',
     'apps.ga',
-    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -60,9 +59,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
-    'django.middleware.common.CommonMiddleware',
-]
 
 ROOT_URLCONF = 'geneticalgorithm.urls'
 
