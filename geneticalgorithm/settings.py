@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'geneticalgorithm.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/generative-music',
+        default='postgresql://postgres:postgres@localhost/postgres',
         conn_max_age=600
     )
 }
