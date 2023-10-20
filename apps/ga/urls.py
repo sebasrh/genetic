@@ -7,5 +7,4 @@ urlpatterns = [
          views.generations, name="generations"),
     path('generations/<int:generations_id>/evolve/', views.evolve, name="evolve"),
     path('generations/<int:generations_id>/evaluate/<int:melody_id>/', views.evaluate, name="evaluate"),
-
 ]
