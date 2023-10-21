@@ -27,7 +27,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', "False").lower() == "true"
 
-ADMINS = [('Admin', 'sebastian.hidalgo@correounivalle.edu.co')]
+ADMINS = [('admin', 'sebastian.hidalgo@correounivalle.edu.co')]
+
+MANAGERS = ADMINS
 # https://docs.djangoproject.com/en/3.0/ref/settings/#allowed-hosts
 
 ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(" ")
@@ -131,12 +133,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 LOGIN_URL = "/accounts/signin"
 
 MEDIA_URL = '/media/'
@@ -158,4 +154,9 @@ if not DEBUG:
     SECURE_REDIRECT_EXEMPT = []
     SECURE_SSL_REDIRECT = True
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-    
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+else:
+    STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
