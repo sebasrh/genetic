@@ -1,32 +1,14 @@
-import fluidsynth
+import subprocess
 from pydub import AudioSegment
 
 def convert_midi_to_wav_mp3(file_midi, soundfont_path):
-
     # Build file paths
     file_wav = file_midi.replace(".mid", ".wav")
     file_mp3 = file_midi.replace(".mid", ".mp3")
 
-    # Create a FluidSynth instance
-    fs = fluidsynth.Synth()
-
-    # Load the SoundFont
-    sfid = fs.sfload(soundfont_path)
-
-    # Initialize FluidSynth
-    fs.start(driver="alsa")
-
-    # Load the SoundFont instrument
-    fs.program_select(0, sfid, 0, 0)
-
-    # Load the MIDI file
-    fs.midi_file_load(file_midi)
-
-    # Render the MIDI file to WAV
-    fs.midi_to_wav(file_midi, file_wav)
-
-    # Stop and close FluidSynth
-    fs.delete()
+    # Use FluidSynth to convert MIDI to WAV
+    fluidsynth_command = f"fluidsynth -a alsa -g 1.0 -l -i '{soundfont_path}' '{file_midi}' -F '{file_wav}'"
+    subprocess.run(fluidsynth_command, shell=True)
 
     # Load the WAV file using pydub
     audio = AudioSegment.from_wav(file_wav)
