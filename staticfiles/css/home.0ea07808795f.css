@@ -1,0 +1,165 @@
+header.masthead .site-heading {
+    color: var(--color-background);
+}
+
+header.masthead .site-heading {
+    text-align: center;
+}
+
+header.masthead {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: no-repeat center center;
+    background-color: var(--color-button);
+    background-size: cover;
+    background-attachment: scroll;
+}
+
+header.masthead:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000000;
+    opacity: 0.5;
+}
+
+header.masthead .site-heading h1,
+header.masthead .site-heading .h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+}
+
+header.masthead .site-heading .subheading {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.1;
+    display: block;
+    margin: 0.75rem 0 2rem;
+}
+
+i.rating {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+hr {
+    border : 0;
+    opacity: 1;
+    margin: 1.5rem 0;
+}
+
+footer {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: transparent;
+    color: var(--color-text);
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.thanks {
+    font-size: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.list-group-item {
+    background-color: transparent;
+    border: none;
+    padding: 1rem 1rem;
+    color: var(--color-text);
+}
+
+.ml {
+    margin-left: 3rem;
+}
+
+.full {
+    color: #fde16d;
+    font-size: 0.75rem;
+}
+
+.empty {
+    color: var(--color-text);
+    font-size: 0.75rem;
+}
+
+.mb-btn {
+    margin-bottom: 3rem;
+}
+
+.bg-stars {
+    padding-left: 0.875rem !important;
+    padding-right: 0.875rem !important;
+    padding-top: 0.3rem !important;
+    padding-bottom: 0.3rem !important;
+    background-color: var(--color-card);
+    border-radius: 0.5rem !important;
+    box-shadow: 0 0 0 0.1rem var(--color-card-border);
+    width: min-content;
+}
+
+ul li.list-inline-item {
+    font-size: 0.68rem;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 767px) {
+
+    header.masthead {
+        padding-top: 12.5rem;
+        padding-bottom: 12.5rem;
+    }
+
+    header.masthead .site-heading h1,
+    header.masthead .site-heading .h1 {
+        font-size: 4.875rem;
+    }
+
+    header.masthead .subheading {
+        font-size: 1.875rem;
+    }
+
+    header.masthead .site-heading .subheading {
+        font-size: 1.4rem;
+    }
+
+    .thanks {
+        font-size: 1rem;
+    }
+
+    .small {
+        font-size: 0.875rem;
+    }
+
+
+    i.rating {
+        font-size: 3rem;
+    }
+
+    .bg-stars {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+        padding-top: 0.5rem !important;
+        padding-bottom: 0.5rem !important;       
+    }
+
+    .full {
+        font-size: 1rem;
+    }
+    
+    .empty {
+        font-size: 1rem;
+    }
+
+    ul li.list-inline-item {
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+}

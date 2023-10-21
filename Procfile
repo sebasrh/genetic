@@ -1,0 +1,1 @@
+web: gunicorn geneticalgorithm.wsgi --log-file -

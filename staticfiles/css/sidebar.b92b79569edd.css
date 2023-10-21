@@ -1,0 +1,133 @@
+#side_nav {
+    background: var(--color-navigation-bar);
+    width: 250px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    z-index: 99;
+    position: fixed;
+    margin-left: -250px;
+    border: none;
+    color: var(--color-background);
+}
+
+.navbar-container {
+    background: var(--color-navigation-bar);
+    position: fixed;
+    z-index: 4;
+    width: 100%;
+    top: 0;
+    color: var(--color-background);
+}
+
+.open-btn,
+.close-btn {
+    color: var(--color-background);
+}
+
+.navbar {
+    height: 70px;
+}
+
+.content {
+    width: 100%;
+    position: relative;
+    left: 0;
+    transition: all 0.3s ease-in-out;
+    padding-top: 70px;
+}
+
+#side_nav.active {
+    margin-left: 0;
+}
+
+#side_nav.active~.content {
+    left: 249px;
+    width: calc(100% - 250px);
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar li.active {
+    background: var(--color-background);
+    border-radius: 8px;
+}
+
+.sidebar li.active a {
+    color: var(--color-navigation-bar)
+
+}
+
+.sidebar li a {
+    color: var(--color-background);
+    border-radius: 8px;
+    font-size: 1.2rem;
+}
+
+.sidebar li a:hover {
+    background: var(--color-background);
+    border-radius: 8px;
+    color: var(--color-navigation-bar);
+    transition: all 0.5s ease;
+}
+
+.list-unstyled {
+    margin-top: 2rem;
+}
+
+.list-unstyled li {
+    margin-bottom: 0.5rem;
+}
+
+.dropdown .dropdown-menu {
+    background: var(--color-background);
+    border: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-top: 21px;
+}
+
+.dropdown .dropdown-item p{
+    color: var(--color-text);
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+        
+}
+
+.dropdown .dropdown-item p:hover {
+    color: var(--color-background);
+    background: var(--color-navigation-bar);
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .sidebar li a {
+        font-size: 0.875rem;
+    }
+}
+
+@media(max-width: 992px) {
+    #side_nav {
+        margin-left: -250px;
+        position: absolute;
+        min-height: 100vh;
+        z-index: 99;
+        position: fixed;
+    }
+
+    #side_nav.active {
+        margin-left: 0;
+    }
+
+    #side_nav.active~.content {
+        left: 0;
+        width: 100%;
+    }
+
+    .dropdown .dropdown-menu {
+        margin-top: 23px;
+    }
+
+    .dropdown .dropdown-item p{
+        padding: 0.3rem 0.7rem;
+    }
+    
+}
